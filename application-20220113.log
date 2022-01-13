@@ -1,0 +1,52 @@
+2022-01-13 13:23:26.531 [main] TRACE com.revature.console.Driver - New user signed up: hayati 
+2022-01-13 13:45:46.913 [main] TRACE com.revature.console.Driver - Deposit into account 1 amount: $100.0
+2022-01-13 19:29:55.666 [main] TRACE com.revature.console.Driver - New account created id: 3
+2022-01-13 19:31:32.723 [main] TRACE com.revature.console.Driver - New account created id: 4
+2022-01-13 19:38:54.959 [main] TRACE com.revature.console.Driver - New account created id: 5
+2022-01-13 19:40:32.695 [main] TRACE com.revature.console.Driver - New account created id: 6
+2022-01-13 19:41:53.177 [main] TRACE com.revature.console.Driver - New account created id: 7
+2022-01-13 19:53:27.239 [main] TRACE com.revature.console.Driver - New customer added id: 5
+2022-01-13 19:59:36.903 [main] TRACE com.revature.console.Driver - New customer added id: 6
+2022-01-13 20:02:26.372 [main] TRACE com.revature.console.Driver - User with id: 5 is deleted.
+2022-01-13 20:02:46.403 [main] TRACE com.revature.console.Driver - New customer added id: 7
+2022-01-13 20:02:46.437 [main] TRACE com.revature.console.Driver - User with id: 5 is deleted.
+2022-01-13 20:02:59.722 [main] TRACE com.revature.console.Driver - New customer added id: 8
+2022-01-13 20:02:59.902 [main] TRACE com.revature.console.Driver - User with id: 8 is deleted.
+2022-01-13 20:03:07.329 [main] TRACE com.revature.console.Driver - New customer added id: 9
+2022-01-13 20:03:07.399 [main] TRACE com.revature.console.Driver - User with id: 9 is deleted.
+2022-01-13 20:04:43.872 [main] TRACE com.revature.console.Driver - New customer added id: 10
+2022-01-13 20:04:43.904 [main] TRACE com.revature.console.Driver - User with id: 10 is deleted.
+2022-01-13 20:04:44.015 [main] TRACE com.revature.console.Driver - New account created id: 8
+2022-01-13 20:04:44.048 [main] TRACE com.revature.console.Driver - Deposit into account 1 amount: $100.0
+2022-01-13 20:09:00.190 [main] TRACE com.revature.console.Driver - New account created id: 9
+2022-01-13 20:09:00.465 [main] TRACE com.revature.console.Driver - Account with id: 9 is deleted.
+2022-01-13 20:09:19.962 [main] TRACE com.revature.console.Driver - Account with id: 2 is deleted.
+2022-01-13 20:09:26.635 [main] TRACE com.revature.console.Driver - Account with id: 3 is deleted.
+2022-01-13 20:09:32.447 [main] TRACE com.revature.console.Driver - Account with id: 4 is deleted.
+2022-01-13 20:09:40.337 [main] TRACE com.revature.console.Driver - Account with id: 5 is deleted.
+2022-01-13 20:09:49.287 [main] TRACE com.revature.console.Driver - Account with id: 6 is deleted.
+2022-01-13 20:09:56.758 [main] TRACE com.revature.console.Driver - Account with id: 7 is deleted.
+2022-01-13 20:10:05.841 [main] TRACE com.revature.console.Driver - Account with id: 8 is deleted.
+2022-01-13 20:10:09.855 [main] TRACE com.revature.console.Driver - Account with id: 8 is deleted.
+2022-01-13 20:10:28.841 [main] TRACE com.revature.console.Driver - New account created id: 10
+2022-01-13 20:10:28.869 [main] TRACE com.revature.console.Driver - Account with id: 10 is deleted.
+2022-01-13 20:19:21.891 [main] TRACE com.revature.console.Driver - Deposit into account 1 amount: $100.0
+2022-01-13 20:19:26.277 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:19:33.471 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:19:37.610 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:19:42.261 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:19:46.843 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:19:51.822 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:19:56.511 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:26:21.926 [main] TRACE com.revature.console.Driver - Deposit into account 1 amount: $100.0
+2022-01-13 20:26:25.906 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:27:09.007 [main] TRACE com.revature.console.Driver - Deposit into account 1 amount: $100.0
+2022-01-13 20:27:14.172 [main] TRACE com.revature.console.Driver - Withdrawn from account 1 amount: $100.0
+2022-01-13 20:33:20.338 [main] TRACE com.revature.console.Driver - Deposit into account 1 amount: $100.0
+2022-01-13 20:38:16.084 [main] TRACE com.revature.console.Driver - New account created id: 11
+2022-01-13 20:38:16.144 [main] TRACE com.revature.console.Driver - New account created id: 12
+2022-01-13 20:38:16.191 [main] TRACE com.revature.console.Driver - Deposit into account 11 amount: $100.0
+2022-01-13 20:38:16.270 [main] TRACE com.revature.console.Driver - Withdrawn from account 11 amount: $100.0
+2022-01-13 20:38:16.302 [main] TRACE com.revature.console.Driver - Deposit into account 12 amount: $100.0
+2022-01-13 20:38:16.351 [main] TRACE com.revature.console.Driver - Account with id: 11 is deleted.
+2022-01-13 20:38:16.383 [main] TRACE com.revature.console.Driver - Account with id: 12 is deleted.
