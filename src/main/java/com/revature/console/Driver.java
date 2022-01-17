@@ -18,8 +18,8 @@ public class Driver {
             Scanner scanner = new Scanner(System.in);
             boolean stay = true;
             while (stay) {
-                Menu menu = new Menu();
-                stay = menu.mainMenu(scanner);
+                Menu menu = new Menu(scanner);
+                stay = menu.mainMenu();
             }
         } finally {
             // When the program is stopped, this will trigger and close the connection
