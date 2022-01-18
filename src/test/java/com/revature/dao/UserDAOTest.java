@@ -6,9 +6,7 @@ import com.revature.model.Employee;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
 
 import static org.junit.Assert.*;
 
@@ -99,15 +97,6 @@ public class UserDAOTest {
         assertNull(dao.isEmployeeOrAdmin("anyone else", "123"));
     }
 
-    @Test
-    public void createCredit() {
-        assertNotEquals(-1, dao.createCredit(1, 1000));
-    }
-
-//    @Test
-//    public void showCreditsToBeApproved() {
-//        dao.showCreditsToBeApproved();
-//    }
 
     @Test
     public void getCustomerAccounts() {
