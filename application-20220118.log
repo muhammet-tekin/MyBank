@@ -1,0 +1,38 @@
+2022-01-18 00:02:05.786 [main] TRACE com.revature.console.Driver - New customer signed-up id: 23
+2022-01-18 00:02:18.709 [main] TRACE com.revature.console.Driver - elif deposited  $100.0 in account id =1.
+2022-01-18 00:17:17.804 [main] TRACE com.revature.console.Driver - New account created id: 45
+2022-01-18 00:17:17.869 [main] TRACE com.revature.console.Driver - elif applied for an account, the id of created account is 45
+2022-01-18 00:17:50.311 [main] TRACE com.revature.console.Driver - Account is approved id: 45
+2022-01-18 00:17:50.311 [main] TRACE com.revature.console.Driver - employee approved account with id :45.
+2022-01-18 00:19:48.393 [main] TRACE com.revature.console.Driver - New customer signed-up id: 24
+2022-01-18 00:24:07.934 [main] TRACE com.revature.console.Driver - New account created id: 46
+2022-01-18 00:24:08.102 [main] TRACE com.revature.console.Driver - muhammet applied for a joint account with the customer with id 3453453, the id of created account is 46
+2022-01-18 00:32:22.372 [main] TRACE com.revature.console.Driver - New account created id: 47
+2022-01-18 00:35:02.688 [main] TRACE com.revature.console.Driver - New account created id: 48
+2022-01-18 00:35:06.935 [main] TRACE com.revature.console.Driver - New account created id: 49
+2022-01-18 00:35:13.193 [main] TRACE com.revature.console.Driver - New account created id: 50
+2022-01-18 00:37:21.138 [main] TRACE com.revature.console.Driver - New account created id: 51
+2022-01-18 00:39:37.465 [main] TRACE com.revature.console.Driver - New account created id: 52
+2022-01-18 00:39:42.056 [main] TRACE com.revature.console.Driver - New account created id: 53
+2022-01-18 00:39:49.359 [main] TRACE com.revature.console.Driver - New account created id: 54
+2022-01-18 00:39:49.533 [main] TRACE com.revature.console.Driver - muhammet applied for a joint account with the customer with id 24, the id of created account is 54
+2022-01-18 00:49:52.085 [main] TRACE com.revature.console.Driver - New account created id: 55
+2022-01-18 00:49:52.184 [main] TRACE com.revature.console.Driver - muhammet applied for a joint account with the customer with id 24, the id of created account is 55
+2022-01-18 00:52:05.658 [main] TRACE com.revature.console.Driver - Account is approved id: 55
+2022-01-18 00:52:05.662 [main] TRACE com.revature.console.Driver - employee approved account with id :55.
+2022-01-18 00:57:05.638 [main] TRACE com.revature.console.Driver - New customer signed-up id: 25
+2022-01-18 00:57:13.593 [main] TRACE com.revature.console.Driver - New account created id: 56
+2022-01-18 00:57:13.635 [main] TRACE com.revature.console.Driver - ayse applied for an account, the id of created account is 56
+2022-01-18 01:14:15.785 [main] TRACE com.revature.console.Driver - New account created id: 58
+2022-01-18 01:14:15.813 [main] TRACE com.revature.console.Driver - New account created id: 59
+2022-01-18 01:14:16.043 [main] TRACE com.revature.console.Driver - Account with id: 58 is deleted.
+2022-01-18 01:14:16.087 [main] TRACE com.revature.console.Driver - Account with id: 59 is deleted.
+2022-01-18 01:14:16.246 [main] TRACE com.revature.console.Driver - New customer added id: 26
+2022-01-18 01:14:16.287 [main] TRACE com.revature.console.Driver - User with id: 26 is deleted.
+2022-01-18 01:14:16.386 [main] TRACE com.revature.console.Driver - Account is approved id: 1
+2022-01-18 01:14:16.453 [main] TRACE com.revature.console.Driver - admin cancelled account with id :1.
+2022-01-18 01:14:16.605 [main] TRACE com.revature.console.Driver - Account is approved id: 1
+2022-01-18 01:14:16.825 [main] TRACE com.revature.console.Driver - New account created id: 60
+2022-01-18 01:14:16.855 [main] TRACE com.revature.console.Driver - Account with id: 60 is deleted.
+2022-01-18 01:14:16.895 [main] TRACE com.revature.console.Driver - User (ID: 1) applied for a credit of amount $1000.0
+2022-01-18 01:14:54.060 [main] TRACE com.revature.console.Driver - admin cancelled account with id :1.

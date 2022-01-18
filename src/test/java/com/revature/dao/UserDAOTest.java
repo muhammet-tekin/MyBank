@@ -2,9 +2,13 @@ package com.revature.dao;
 
 import com.revature.model.Account;
 import com.revature.model.Customer;
+import com.revature.model.Employee;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
@@ -90,9 +94,9 @@ public class UserDAOTest {
 
     @Test
     public void isEmployeeOrAdmin() {
-        assertEquals(1, dao.isEmployeeOrAdmin("employee", "123"));
-        assertEquals(2, dao.isEmployeeOrAdmin("admin", "123"));
-        assertEquals(0, dao.isEmployeeOrAdmin("anyone else", "123"));
+        assertTrue(dao.isEmployeeOrAdmin("employee", "123") instanceof Employee);
+        assertTrue(dao.isEmployeeOrAdmin("admin", "123").isAdmin());
+        assertNull(dao.isEmployeeOrAdmin("anyone else", "123"));
     }
 
     @Test
@@ -100,21 +104,35 @@ public class UserDAOTest {
         assertNotEquals(-1, dao.createCredit(1, 1000));
     }
 
-    @Test
-    public void showCreditsToBeApproved() {
-        dao.showCreditsToBeApproved();
-    }
+//    @Test
+//    public void showCreditsToBeApproved() {
+//        dao.showCreditsToBeApproved();
+//    }
 
     @Test
     public void getCustomerAccounts() {
-        ArrayList<Account> listAccounts = dao.getCustomerAccounts(1);
+        ArrayList<Account> listAccounts = dao.getCustomerAccounts(1, false);
         for(Account a:listAccounts)
             System.out.println(a.toString());
     }
 
 
     @Test
-    public void getCustomer() {
+    public void getCustomerTest() {
         assertTrue(dao.getCustomer("muhammet", "123") instanceof Customer);
+    }
+
+    @Test
+    public void executeTest() {
+        dao.execute(new String[]{"cancel", "1"}, new Customer("admin", "123", 1), "Admin");
+        assertTrue(dao.isAccountCancelled(1));
+        dao.cancelAccount(1, false);
+    }
+
+
+
+    @Test
+    public void getAllAccountsTest() {
+        dao.getAllAccounts();
     }
 }
