@@ -36,3 +36,16 @@
 2022-01-18 01:14:16.855 [main] TRACE com.revature.console.Driver - Account with id: 60 is deleted.
 2022-01-18 01:14:16.895 [main] TRACE com.revature.console.Driver - User (ID: 1) applied for a credit of amount $1000.0
 2022-01-18 01:14:54.060 [main] TRACE com.revature.console.Driver - admin cancelled account with id :1.
+2022-01-18 01:11:46.316 [main] TRACE com.revature.console.Driver - New account created id: 57
+2022-01-18 01:11:46.424 [main] TRACE com.revature.console.Driver - ayse applied for a joint account with the customer with id 1, the id of created account is 57
+2022-01-18 01:25:58.499 [main] TRACE com.revature.console.Driver - admin cancelled account with id :57.
+2022-01-18 01:42:23.010 [main] TRACE com.revature.console.Driver - Account is approved id: 57
+2022-01-18 01:42:23.014 [main] TRACE com.revature.console.Driver - admin approved account with id :57.
+2022-01-18 01:42:50.276 [main] TRACE com.revature.console.Driver - admin un-cancelled account with id :57.
+2022-01-18 01:43:06.176 [main] TRACE com.revature.console.Driver - admin deposited  $50.0 in account id =57.
+2022-01-18 01:59:52.158 [main] TRACE com.revature.console.Driver - New account created id: 61
+2022-01-18 02:00:04.563 [main] TRACE com.revature.console.Driver - New account created id: 62
+2022-01-18 02:00:04.602 [main] TRACE com.revature.console.Driver - muhammet applied for an account, the id of created account is 62
+2022-01-18 02:00:28.955 [main] TRACE com.revature.console.Driver - muhammet deposited  $10.0 in account id =1.
+2022-01-18 02:00:36.719 [main] TRACE com.revature.console.Driver - muhammet withdrew  $100.0 from account id =1.
+2022-01-18 02:01:08.614 [main] TRACE com.revature.console.Driver - muhammet transferred  $100.0 from account id =1 to the account 57.

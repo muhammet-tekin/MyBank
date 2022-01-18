@@ -18,19 +18,37 @@ public class Menu {
     }
 
     public boolean mainMenu() {
-        System.out.println();
-        System.out.println("Welcome to MyBanK! Type.. : ");
-        System.out.println("login , signup , or exit");
+        String logo = "                                          ___..--'  .`.\n" +
+                "                                    ___...--'     -  .` `.`.\n" +
+                "                           ___...--' _      -  _   .` -   `.`.\n" +
+                "                  ___...--'  -       _   -       .`  `. - _ `.`.\n" +
+                "           __..--'_______________ -         _  .`  _   `.   - `.`.\n" +
+                "        .`    _ /\\    -        .`      _     .`__________`. _  -`.`.\n" +
+                "      .` -   _ /  \\_     -   .`  _         .` |  MY BANK  |`.   - `.`.\n" +
+                "    .`-    _  /   /\\   -   .`        _   .`   |___________|  `. _   `.`.\n" +
+                "  .`________ /__ /_ \\____.`____________.`     ___       ___  - `._____`|\n" +
+                "    |   -  __  -|    | - |  ____  |   | | _  |   |  _  |   |  _ |\n" +
+                "    | _   |  |  | -  |   | |.--.| |___| |    |___|     |___|    |\n" +
+                "    |     |--|  |    | _ | |'--'| |---| |   _|---|     |---|_   |\n" +
+                "    |   - |__| _|  - |   | |.--.| |   | |    |   |_  _ |   |    |\n" +
+                " ---``--._      |    |   |=|'--'|=|___|=|====|___|=====|___|====|\n" +
+                "                                             (source: ASCII art archive)";
+        System.out.println(logo);
+        System.out.println("------------------------ WELCOME TO MY BANK!---------------------------");
+        System.out.println("--------------------- Please type an option below----------------------");
+        System.out.println("---------------------- login , signup , or exit------------------------");
+        System.out.print(" >>> " );
 
         try {
 
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "login":
-                    System.out.println("UI you will see depends on your role!");
+                    System.out.println("User interface you will see depends on the role you have: Customer, Employee or Admin!");
                     System.out.println("To login as employee (username: employee pass: 123)" +
                                          " or as admin (username: admin pass: 123)" +
                                             " or as a customer (username: muhammet pass: 123)");
+                    System.out.println("You can also signup from the main menu as a customer. Unsuccessful login attempt will lead you back in the main menu.");
 
                     logIn();
                     break;
@@ -38,7 +56,9 @@ public class Menu {
                     signUp();
                     break;
                 case "exit":
-                    System.out.println("Good bye...See you soon again:))");
+                    System.out.println("                                                ,,,\n" +
+                                       "                  Good bye...                  (o o)\n" +
+                                       "-------------------------------------------oOO--( )--OOo----");
                     return false;
                 default:
                     System.out.println("Invalid input: " + input);
@@ -166,7 +186,7 @@ public class Menu {
 
         HashSet<String> adminCommands = new HashSet<>(Arrays.asList(
                 "transfer", "deposit", "withdraw", "exit", "cancel", "no-cancel","reject",
-                "approve", "customers", "accounts"));
+                "approve", "customers", "accounts", "applications"));
 
         HashSet<String> employeeCommands = new HashSet<>(Arrays.asList(
                 "exit", "reject", "approve", "customers", "accounts", "applications"));

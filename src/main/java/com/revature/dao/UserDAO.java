@@ -6,6 +6,7 @@ import com.revature.model.Credit;
 import com.revature.model.Customer;
 import com.revature.model.Employee;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -742,7 +743,7 @@ public class UserDAO {
                 if(print) System.out.println("No accounts in database!");
             }
             else {
-                if(print) System.out.println("Account Id\t  Balance\tApproved?\tCancelled?\tOwner");
+                if(print) System.out.println("Account Id\t  Balance\tApproved?\tCancelled?");
                 do {
                     int accId = results.getInt("id");
                     double balance = results.getDouble("balance");
