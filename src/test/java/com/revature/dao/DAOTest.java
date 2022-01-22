@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import com.revature.model.Account;
+import com.revature.model.Credit;
 import com.revature.model.Customer;
 import com.revature.model.Employee;
 import org.junit.Test;
@@ -10,9 +11,9 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class UserDAOTest {
+public class DAOTest {
 
-    UserDAO dao = new UserDAO();
+    DAO dao = new DAO();
 
     @Test
     public void depositTest() {
@@ -118,10 +119,18 @@ public class UserDAOTest {
         dao.cancelAccount(1, false);
     }
 
-
-
     @Test
     public void getAllAccountsTest() {
         dao.getAllAccounts();
+    }
+
+    @Test
+    public void setAccountTest() {
+        int id =  dao.createAccount();
+        Account account = new Account(id, 100., true, false);
+        if(dao.setAccount(account) == 1){
+            assertEquals(100.0, dao.getBalance(id), .001);
+            dao.deleteAccount(id);
+        }
     }
 }

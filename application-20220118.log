@@ -72,3 +72,14 @@
 2022-01-18 15:24:57.756 [main] TRACE com.revature.console.Driver - Account is approved id: 1
 2022-01-18 15:24:58.021 [main] TRACE com.revature.console.Driver - New account created id: 68
 2022-01-18 15:24:58.065 [main] TRACE com.revature.console.Driver - Account with id: 68 is deleted.
+2022-01-18 15:30:29.571 [main] TRACE com.revature.console.Driver - New account created id: 69
+2022-01-18 15:30:29.818 [main] TRACE com.revature.console.Driver - New account created id: 70
+2022-01-18 15:30:30.016 [main] TRACE com.revature.console.Driver - Account with id: 69 is deleted.
+2022-01-18 15:30:30.044 [main] TRACE com.revature.console.Driver - Account with id: 70 is deleted.
+2022-01-18 15:30:30.159 [main] TRACE com.revature.console.Driver - New customer added id: 29
+2022-01-18 15:30:30.189 [main] TRACE com.revature.console.Driver - User with id: 29 is deleted.
+2022-01-18 15:30:30.270 [main] TRACE com.revature.console.Driver - Account is approved id: 1
+2022-01-18 15:30:30.321 [main] TRACE com.revature.console.Driver - admin cancelled account with id :1.
+2022-01-18 15:30:30.459 [main] TRACE com.revature.console.Driver - Account is approved id: 1
+2022-01-18 15:30:30.669 [main] TRACE com.revature.console.Driver - New account created id: 71
+2022-01-18 15:30:30.703 [main] TRACE com.revature.console.Driver - Account with id: 71 is deleted.

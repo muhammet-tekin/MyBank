@@ -5,6 +5,7 @@ import com.revature.model.Account;
 import com.revature.model.Credit;
 import com.revature.model.Customer;
 import com.revature.model.Employee;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.sql.*;
@@ -13,8 +14,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 
-public class UserDAO {
-
+public class DAO {
 
 
     public boolean execute(String[] args, Customer loggedIn, String role){
@@ -241,6 +241,38 @@ public class UserDAO {
         return customer;
     }
 
+    public Customer findCustomerByUsername(String username){
+
+        try {
+            Connection c = ConnectionManager.getConnection();
+
+            String customerRecord = "SELECT * FROM customers WHERE username = ? ";
+
+            PreparedStatement preparedStatement = c.prepareStatement(customerRecord);
+            preparedStatement.setString(1, username);
+            ResultSet results = preparedStatement.executeQuery();
+
+
+            if (!results.next()) {                            //if rs.next() returns false
+                //then there are no rows.
+                return null;
+            }
+            else {
+                int id = results.getInt("id");
+                String password = results.getString("password");
+                return new Customer(username, password, id);
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+
+
     public Customer getCustomer(String username, String password){
 
         try {
@@ -271,9 +303,7 @@ public class UserDAO {
         return null;
     }
 
-
-
-   public int deposit(int accountId, double amount){
+    public int deposit(int accountId, double amount){
 
         if(amount <= 0){
             System.out.println("!!!Amount should be positive!!!".toUpperCase(Locale.ROOT));
@@ -330,7 +360,6 @@ public class UserDAO {
         return -1;
     }
 
-
     public int transfer(int fromAccountId, int toAccountId, double amount){
         if(withdraw(fromAccountId, amount) == -1){
             return -1;
@@ -338,9 +367,6 @@ public class UserDAO {
         deposit(toAccountId, amount);
         return 1;
     }
-
-
-
 
     public Double getBalance(int accountId){
 
@@ -394,7 +420,6 @@ public class UserDAO {
         return -1;
     }
 
-
     public int createCustomer(String username, String password) {
 
         int customerId;
@@ -427,8 +452,6 @@ public class UserDAO {
         return -1;
     }
 
-
-
     public int deleteCustomer(int id) {
 
         try {
@@ -458,7 +481,6 @@ public class UserDAO {
         }
         return -1;
     }
-
 
     public Boolean isAccountCancelled(int accountId){
 
@@ -502,7 +524,6 @@ public class UserDAO {
         return false;
     }
 
-
     public Boolean isAccountEligible(int accountId){
 
         try {
@@ -524,7 +545,6 @@ public class UserDAO {
         }
         return false;
     }
-
 
     public int cancelAccount(int accountId, boolean isCancelled){
 
@@ -562,7 +582,6 @@ public class UserDAO {
         }
         return -1;
     }
-
 
     public ArrayList<Account> showAccountsToBeApproved(){
         ArrayList<Account> listAccounts = new ArrayList<>();
@@ -618,7 +637,6 @@ public class UserDAO {
         return null;
     }
 
-
     public Employee isEmployeeOrAdmin(String username, String password){
 
 
@@ -645,7 +663,6 @@ public class UserDAO {
         }
         return null;
     }
-
 
     public void showCreditsToBeApproved(){
 
@@ -717,6 +734,9 @@ public class UserDAO {
         return null;
     }
 
+    public ArrayList<Account> getCustomerAccounts(int customerId) {
+        return getCustomerAccounts(customerId, false);
+    }
 
     public ArrayList<Account> getCustomerAccounts(int customerId, boolean print){
 
@@ -826,8 +846,6 @@ public class UserDAO {
         return null;
     }
 
-
-
     public int assignOwner(int accountId, int ownerId){
 
 //        if(checkOwnership(ownerId, accountId)){
@@ -869,7 +887,6 @@ public class UserDAO {
         }
     }
 
-
     public ArrayList<Customer> getAllCustomers(boolean print){
 
         ArrayList<Customer> listCustomers = new ArrayList<>();
@@ -909,6 +926,30 @@ public class UserDAO {
         }
 
         return null;
+    }
+
+
+
+    public int setAccount(@NotNull Account a) {
+
+        try {
+            Connection c = ConnectionManager.getConnection();
+            PreparedStatement preparedStatement = c.prepareStatement("UPDATE accounts SET " +
+                                                                         "balance = ? , isCancelled = ? , isApproved = ?" +
+                                                                         "WHERE id = ?");
+            preparedStatement.setDouble(1, a.getBalance());
+            preparedStatement.setBoolean(2, a.isCancelled());
+            preparedStatement.setBoolean(3, a.isApproved());
+            preparedStatement.setInt(4, a.getId());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            //if(rowsAffected == 1) Driver.logger.trace("Account is cancelled id: " + accountId);
+            return rowsAffected;
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return -1;
     }
 
 }

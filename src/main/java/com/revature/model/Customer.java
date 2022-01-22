@@ -1,6 +1,8 @@
 package com.revature.model;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 
     int id;
 

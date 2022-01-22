@@ -1,6 +1,8 @@
 package com.revature.model;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
     int id;
     Double balance;
     boolean isApproved;

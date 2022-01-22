@@ -1,16 +1,14 @@
 package com.revature.console;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
-import com.revature.dao.UserDAO;
-import com.revature.model.Account;
+import com.revature.dao.DAO;
 import com.revature.model.Customer;
 import com.revature.model.Employee;
 
 public class Menu {
     Scanner scanner;
-    UserDAO dao = new UserDAO();
+    DAO dao = new DAO();
 
     public Menu(Scanner scanner) {
 
@@ -30,10 +28,10 @@ public class Menu {
             switch (input) {
                 case "login":
                     System.out.println("User interface you will see depends on the role you have: Customer, Employee or Admin!");
-                    System.out.println("To login as employee (username: employee pass: 123)" +
-                                         " or as admin (username: admin pass: 123)" +
-                                            " or as a customer (username: muhammet pass: 123)");
-                    System.out.println("You can also signup from the main menu as a customer. Unsuccessful login attempt will lead you back in the main menu.");
+                    System.out.println("CHEAT_SHEET--> employee (username: employee pass: 123)" +
+                                         " admin (username: admin pass: 123)" +
+                                            " customer (username: muhammet pass: 123)");
+                    //System.out.println("You can also signup from the main menu as a customer. Unsuccessful login attempt will lead you back in the main menu.");
 
                     logIn();
                     break;
@@ -67,7 +65,7 @@ public class Menu {
             return;
         }
 
-        System.out.print("Password (cover your screen):");
+        System.out.print("Password :");
 
         String password = scanner.nextLine();
         int customer_id = dao.signUp(username, password);
@@ -78,7 +76,7 @@ public class Menu {
     public void logIn() {
         System.out.print("Username: ");
         String username = scanner.nextLine().trim();
-        System.out.print("Password (cover your screen):");
+        System.out.print("Password :");
         String password = scanner.nextLine().trim();
         Employee loggedInEmployee = dao.isEmployeeOrAdmin(username, password);
 

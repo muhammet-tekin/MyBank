@@ -1,7 +1,15 @@
 package com.revature.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties
 public class Employee extends Customer{
-    private boolean isAdmin;
+    public boolean isAdmin;
+
+    public Employee(){
+        super("","",-1);
+        isAdmin = false;
+    };
 
     public Employee(String username, String password, int id, boolean isAdmin) {
         super(username, password, id);
