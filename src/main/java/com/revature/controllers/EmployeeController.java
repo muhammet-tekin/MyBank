@@ -79,8 +79,13 @@ public class EmployeeController {
 
     public Handler deleteEmployee = ctx -> {
         try{
-            //Employee employee = ctx.bodyAsClass(Employee.class);
-            if (EmployeeDAO.deleteEmployee(EmployeeDAO.findEmployeeByUsername(ctx.pathParam("username")).getId())){
+            Employee employee = EmployeeDAO.findEmployeeByUsername(ctx.pathParam("username"));
+            if(employee == null){
+                ctx.result("No such an employee!!");
+                ctx.status(400);
+                return;
+            }
+            if (EmployeeDAO.deleteEmployee(employee.getId())){
                 ctx.result("Employee deleted!!"); // Status code 204 means "Successfully updated"
                 ctx.status(200);
             }

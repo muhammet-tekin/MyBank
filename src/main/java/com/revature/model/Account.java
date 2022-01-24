@@ -3,10 +3,14 @@ package com.revature.model;
 import java.io.Serializable;
 
 public class Account implements Serializable {
-    int id;
-    Double balance;
-    boolean isApproved;
-    boolean isCancelled;
+    public int id;
+    public Double balance;
+    public boolean isApproved;
+    public boolean isCancelled;
+
+    public Account(){
+
+    }
 
     public Account(int id, Double balance, boolean isApproved, boolean isCancelled) {
         this.id = id;

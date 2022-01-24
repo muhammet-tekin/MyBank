@@ -271,8 +271,6 @@ public class DAO {
         return null;
     }
 
-
-
     public Customer getCustomer(String username, String password){
 
         try {
@@ -794,6 +792,7 @@ public class DAO {
     }
 
     public ArrayList<Account> getAllAccounts(){
+        //return accounts with owners
 
         ArrayList<Account> listAccounts = new ArrayList<>();
 
@@ -830,6 +829,48 @@ public class DAO {
                             isApproved ? "\u001B[32m+\u001B[0m" : "\u001B[31m-\u001B[0m" ,
                             isCancelled? "\u001B[31mYES\u001B[0m" : "\u001B[32mNO \u001B[0m",
                             "\u001B[34m" + results.getString("username") + "\u001B[0m");
+
+                    listAccounts.add(a);
+
+                } while (results.next());
+
+                return listAccounts;
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public ArrayList<Account> getAccounts(){
+
+        ArrayList<Account> listAccounts = new ArrayList<>();
+
+        try {
+            Connection c = ConnectionManager.getConnection();
+
+            String customerAccounts = "SELECT * FROM accounts";
+
+
+
+            PreparedStatement preparedStatement = c.prepareStatement(customerAccounts);
+            ResultSet results = preparedStatement.executeQuery();
+
+
+            if (!results.next()) {                            //if rs.next() returns false
+                //then there are no rows.
+                System.out.println("No accounts in database!");
+            }
+            else {
+                do {
+                    int accId = results.getInt("id");
+                    double balance = results.getDouble("balance");
+                    boolean isApproved = results.getBoolean("isApproved");
+                    boolean isCancelled = results.getBoolean("isCancelled");
+                    Account a = new Account(accId, balance, isApproved, isCancelled);
 
                     listAccounts.add(a);
 
@@ -928,7 +969,24 @@ public class DAO {
         return null;
     }
 
+    public static boolean setCustomer(Customer customer){
 
+        try {
+            Connection c = ConnectionManager.getConnection();
+            PreparedStatement preparedStatement = c.prepareStatement("UPDATE customers SET " +
+                    " password = ? " +
+                    " WHERE username = ?");
+
+            preparedStatement.setString(1, customer.getPassword());
+            preparedStatement.setString(2, customer.getUsername());
+
+            return preparedStatement.executeUpdate()!=0; //to convert int to boolean
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     public int setAccount(@NotNull Account a) {
 

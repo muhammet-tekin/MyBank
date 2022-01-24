@@ -30,14 +30,26 @@ public class AccountController {
 
 
     public Handler updateAccount = ctx -> {
-       Account a = ctx.bodyAsClass(Account.class);
-        if (dao.setAccount(a)==1)
-            ctx.status(201); // Status code 201 means "created"
-        else ctx.status(400);
+        try{
+            Account a = ctx.bodyAsClass(Account.class);
+            if (dao.setAccount(a)==1)
+            {
+                ctx.result("Updated!");
+                ctx.status(201); // Status code 201 means "created"
+            }
+
+            else {
+                ctx.result("No account with this id");
+                ctx.status(400);
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
     };
 
     public Handler getAllAccounts = ctx -> {
-        ArrayList<Account> listAccounts = dao.getAllAccounts();
+        ArrayList<Account> listAccounts = dao.getAccounts();
         if(listAccounts == null){
             ctx.result("No account yet!!");
         }
@@ -60,20 +72,38 @@ public class AccountController {
     };
 
     public Handler createAccount = ctx -> {
-        // This line deserializes a JSON object from the body and creates a Java object out of it
-        Account a = ctx.bodyAsClass(Account.class);
-        int id = dao.createAccount();
-        if (id!=-1) {
-            ctx.status(201); // Status code 201 means "created"
-            ctx.result("The id of the created account is " + id);
+        try{
+            // This line deserializes a JSON object from the body and creates a Java object out of it
+            Account a = ctx.bodyAsClass(Account.class);
+            int id = dao.createAccount();
+            if (id!=-1) {
+                System.out.println("The id of the created account is " + id);
+                ctx.result("The id of the created account is " + id);
+                ctx.status(200); // Status code 201 means "created"
+            }
+            else {
+                ctx.status(400);
+            }
+        } catch(Exception e){
+            e.printStackTrace();
         }
-        else ctx.status(400);
+
     };
 
     public Handler deleteAccount = ctx -> {
-        Account a = ctx.bodyAsClass(Account.class);
-        if (dao.deleteAccount(a.getId())==1)
-            ctx.status(201); // Status code 201 means "created"
-        else ctx.status(400);
+        try {
+            if (dao.deleteAccount(Integer.parseInt(ctx.pathParam("accId"))) == 1)
+
+            {
+                ctx.result("Deleted!!");
+                ctx.status(200); // Status code 201 means "created"
+            }
+            else {
+                ctx.status(400);
+                ctx.result("No account with this ID!!");
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     };
 }
