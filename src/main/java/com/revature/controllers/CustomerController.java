@@ -38,7 +38,8 @@ public class CustomerController {
         // This line deserializes a JSON object from the body and creates a Java object out of it
         try{
             Customer c = ctx.bodyAsClass(Customer.class);
-            dao.createCustomer(ctx.pathParam("username"), ctx.pathParam("username"));
+            dao.createCustomer(c.getUsername(), c.getPassword());
+            ctx.result("Customer added!!");
             ctx.status(200);
         } catch(Exception e){
             ctx.status(400);

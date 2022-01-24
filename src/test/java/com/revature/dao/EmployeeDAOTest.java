@@ -17,7 +17,7 @@ public class EmployeeDAOTest {
     @Test
     public void setEmployeeTest() {
         assertTrue(EmployeeDAO.setEmployee(
-                new Employee("UmitTheCoder", "123", 3, true )));
+                new Employee("employee", "123", 3, false )));
     }
 
     @Test

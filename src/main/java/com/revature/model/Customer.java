@@ -8,6 +8,9 @@ public class Customer implements Serializable {
 
     private String username, password;
 
+    public Customer(){
+    }
+
     public Customer(String username, String password, int id) {
         this.username = username;
         this.password = password;

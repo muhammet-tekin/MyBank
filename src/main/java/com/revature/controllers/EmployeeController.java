@@ -32,7 +32,10 @@ public class EmployeeController {
         if(e != null){
             ctx.json(e);
             ctx.status(200);
-        } else ctx.status(204);
+        } else {
+            ctx.result("User not found");
+            ctx.status(400);
+        }
 
     };
 
@@ -40,7 +43,15 @@ public class EmployeeController {
         // This line deserializes a JSON object from the body and creates a Java object out of it
         try{
             Employee employee = ctx.bodyAsClass(Employee.class);
-            System.out.println(null == employee);
+            if(EmployeeDAO.findEmployeeByUsername(employee.getUsername()) == null){
+                if(EmployeeDAO.addEmployee(employee) != null){
+                    ctx.json(employee);
+                    ctx.result("Employee created!");
+                } else ctx.status(400);
+            } else {
+                ctx.result("Employee already exists!");
+            }
+
         } catch(Exception e){
             e.printStackTrace();
         }
@@ -54,11 +65,10 @@ public class EmployeeController {
             Employee employee = ctx.bodyAsClass(Employee.class);
             if (EmployeeDAO.setEmployee(employee)){
                 // Status code 204 means "Successfully updated"
-                ctx.json(employee);
-                ctx.status(204);
+                ctx.result("Employee record is updated!");
+                ctx.status(200);
 
             }
-
                 // Status code 400 means "Error occurred"
             else ctx.status(400);
         } catch (Exception e){
@@ -69,10 +79,10 @@ public class EmployeeController {
 
     public Handler deleteEmployee = ctx -> {
         try{
-            Employee employee = ctx.bodyAsClass(Employee.class);
-            if (EmployeeDAO.deleteEmployee(employee.getId())){
-                // Status code 204 means "Successfully updated"
-                ctx.status(204);
+            //Employee employee = ctx.bodyAsClass(Employee.class);
+            if (EmployeeDAO.deleteEmployee(EmployeeDAO.findEmployeeByUsername(ctx.pathParam("username")).getId())){
+                ctx.result("Employee deleted!!"); // Status code 204 means "Successfully updated"
+                ctx.status(200);
             }
             // Status code 400 means "Error occurred"
             else ctx.status(400);
